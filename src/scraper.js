@@ -11,13 +11,6 @@ async function scrapeProducts() {
     console.log('캐논 리퍼비시 샵 접속 중...');
     await page.goto('https://m.estore.kr.canon/planshop/refurmain', { waitUntil: 'networkidle' });
 
-    // "품절제품 제외" 체크박스 해제 (전체 상품 확인을 위해)
-    const filterLabel = page.locator('label.checkbox', { hasText: '품절제품 제외' });
-    if (await filterLabel.isVisible()) {
-      await filterLabel.click();
-      await page.waitForTimeout(1000); // 필터 적용 대기
-    }
-
     // "더보기" 버튼 클릭하여 모든 상품 로드
     let hasMore = true;
     let prevCount = 0;
