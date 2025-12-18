@@ -1,42 +1,38 @@
 name: Canon Product Monitor
 
-
 on:
   schedule:
     - cron: '*/5 * * * *' # Run every 5 minutes (GitHub minimum)
-  workflow_dispatch: # Manual run
+  workflow_dispatch: # Add manual trigger button
 
+permissions:
+  contents: write
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
 
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
-
 
       - name: Run Monitor
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node src/index.js
-
 
       - name: Commit and Push changes
         run: |
