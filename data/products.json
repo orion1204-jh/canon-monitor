@@ -1,5 +1,23 @@
 [
   {
+    "name": "[A등급] EOS R50 V 14-30 KIT (블랙)",
+    "price": "974,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41517"
+  },
+  {
+    "name": "[A등급] EOS R5 Mark II",
+    "price": "4,124,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/40591"
+  },
+  {
+    "name": "[A등급] EOS R8 (Body)",
+    "price": "1,349,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/34653"
+  },
+  {
     "name": "[S등급] RF24mm F1.8 MACRO IS STM",
     "price": "746,100",
     "isSoldOut": false,
@@ -12,10 +30,28 @@
     "link": "https://m.estore.kr.canon/estore/detailview/41595"
   },
   {
+    "name": "[A등급] EOS R7 18-150 KIT",
+    "price": "1,671,750",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/26205"
+  },
+  {
+    "name": "[A등급] EOS R6 Mark II",
+    "price": "2,024,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/35162"
+  },
+  {
     "name": "[B등급] EOS-1D X Mark III",
     "price": "5,654,350",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/18751"
+  },
+  {
+    "name": "[A등급] RF24-70mm F2.8L IS USM",
+    "price": "2,324,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/21111"
   },
   {
     "name": "[A등급] EOS 5D Mark IV 24-105 F4 II KIT",
@@ -57,12 +93,12 @@
     "name": "[B등급] EF-M55-200mm F4.5-6.3 IS STM (Silver)",
     "price": "270,400",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/42125"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[B등급] EF-M 11-22mm f/4-5.6 IS STM",
     "price": "331,500",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/11859"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   }
 ]
