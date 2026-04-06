@@ -48,12 +48,6 @@
     "link": "https://m.estore.kr.canon/estore/detailview/19476"
   },
   {
-    "name": "[A등급] RF 24-105mm F4-7.1 IS STM",
-    "price": "402,500",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/42686"
-  },
-  {
     "name": "[B등급] EOS-1D X Mark III",
     "price": "5,654,350",
     "isSoldOut": false,
@@ -93,7 +87,7 @@
     "name": "[A등급] EOS 5D Mark IV 24-105 F4 II KIT",
     "price": "3,074,250",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/"
+    "link": "https://m.estore.kr.canon/estore/detailview/13557"
   },
   {
     "name": "[C등급] 스피드라이트 600EX II-RT",
@@ -140,6 +134,12 @@
   {
     "name": "[B등급] EF-M 11-22mm f/4-5.6 IS STM",
     "price": "331,500",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/"
+  },
+  {
+    "name": "[A등급] EXTENDER RF1.4 x",
+    "price": "517,500",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/"
   }
