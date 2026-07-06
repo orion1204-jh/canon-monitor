@@ -36,6 +36,12 @@
     "link": "https://m.estore.kr.canon/estore/detailview/42119"
   },
   {
+    "name": "[C등급] EOS 200D II 18-55 IS STM KIT (White)",
+    "price": "532,950",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/25483"
+  },
+  {
     "name": "[B등급] EF 24-105mm f/4L IS II USM",
     "price": "1,091,350",
     "isSoldOut": false,
@@ -87,6 +93,6 @@
     "name": "[C등급] EF24mm F1.4L II USM",
     "price": "1,049,950",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/43379"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   }
 ]
