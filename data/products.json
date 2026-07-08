@@ -54,6 +54,12 @@
     "link": "https://m.estore.kr.canon/estore/detailview/13557"
   },
   {
+    "name": "[C등급] 스피드라이트 600EX II-RT",
+    "price": "329,450",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/11915"
+  },
+  {
     "name": "[S등급] EF-S 18-135mm f/3.5-5.6 IS USM",
     "price": "657,000",
     "isSoldOut": false,
@@ -87,6 +93,6 @@
     "name": "[B등급] EF-M 11-22mm f/4-5.6 IS STM",
     "price": "331,500",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/11859"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   }
 ]
