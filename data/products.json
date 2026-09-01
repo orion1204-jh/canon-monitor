@@ -1,9 +1,81 @@
 [
   {
+    "name": "[A등급] EOS R50 V 14-30 KIT (블랙)",
+    "price": "974,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41517"
+  },
+  {
+    "name": "[A등급] PowerShot V10 (블랙)",
+    "price": "440,300",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/35166"
+  },
+  {
+    "name": "[B등급] EOS R50 18-45 KIT (White)",
+    "price": "792,350",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/42682"
+  },
+  {
+    "name": "[S등급] SELPHY CP1500 (White)",
+    "price": "188,100",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/34643"
+  },
+  {
+    "name": "[A등급] EOS R10 18-45 KIT",
+    "price": "1,011,750",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/42679"
+  },
+  {
     "name": "[S등급] EF16-35mm F4L IS USM",
     "price": "1,511,100",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/43377"
+  },
+  {
+    "name": "[A등급] EOS R6 Mark II",
+    "price": "2,099,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41519"
+  },
+  {
+    "name": "[A등급] EOS R6 Mark II 24-105 STM",
+    "price": "2,436,750",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/43547"
+  },
+  {
+    "name": "[A등급] EOS R3 (Body)",
+    "price": "4,649,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/25504"
+  },
+  {
+    "name": "[A등급] EOS RP 24-105 STM KIT",
+    "price": "1,304,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/42676"
+  },
+  {
+    "name": "[S등급] RF 24-105mm F4-7.1 IS STM",
+    "price": "517,500",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/43563"
+  },
+  {
+    "name": "[A등급] RF24-105mm F4L IS USM",
+    "price": "1,319,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41527"
+  },
+  {
+    "name": "[A등급] EOS RP (Body)",
+    "price": "966,750",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/16096"
   },
   {
     "name": "[A등급] EOS 5D Mark IV 24-105 F4 II KIT",
@@ -21,24 +93,18 @@
     "name": "[C등급] EF-M15-45mm F3.5-6.3 IS STM (Black)",
     "price": "165,000",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/42123"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[C등급] 스피드라이트 430EX III-RT",
     "price": "206,250",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/23016"
-  },
-  {
-    "name": "[C등급] EF 85mm f/1.8 USM",
-    "price": "324,500",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/11497"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[B등급] EF-M 11-22mm f/4-5.6 IS STM",
     "price": "331,500",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/11859"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   }
 ]
