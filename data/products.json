@@ -1,9 +1,33 @@
 [
   {
+    "name": "[S등급] RF14mm F1.4 L VCM",
+    "price": "2,969,100",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/43637"
+  },
+  {
     "name": "[A등급] EOS R50 V 14-30 KIT (블랙)",
     "price": "974,250",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/41517"
+  },
+  {
+    "name": "[S등급] EOS R1",
+    "price": "8,009,100",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/43639"
+  },
+  {
+    "name": "[S등급] EOS R5 Mark II 24-105 USM",
+    "price": "6,199,200",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/43640"
+  },
+  {
+    "name": "[A등급] EOS R100 18-45 KIT",
+    "price": "644,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/42675"
   },
   {
     "name": "[A등급] PowerShot V10 (블랙)",
@@ -42,10 +66,22 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43547"
   },
   {
+    "name": "[S등급] EOS R6 Mark II",
+    "price": "2,519,100",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/43638"
+  },
+  {
     "name": "[A등급] EOS R3 (Body)",
     "price": "4,649,250",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/25504"
+  },
+  {
+    "name": "[A등급] RF 85mm F2 MACRO IS STM",
+    "price": "587,300",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/23377"
   },
   {
     "name": "[A등급] EOS RP 24-105 STM KIT",
@@ -57,41 +93,53 @@
     "name": "[S등급] RF 24-105mm F4-7.1 IS STM",
     "price": "517,500",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/43563"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[A등급] RF24-105mm F4L IS USM",
     "price": "1,319,250",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/41527"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
+  },
+  {
+    "name": "[A등급] 드롭 인 필터 마운트 어댑터 EF-EOS R 가변 ND 필터 A",
+    "price": "450,000",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[A등급] EOS RP (Body)",
     "price": "966,750",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/16096"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[A등급] EOS 5D Mark IV 24-105 F4 II KIT",
     "price": "3,074,250",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/13557"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[S등급] EF-S 18-135mm f/3.5-5.6 IS USM",
     "price": "657,000",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/41581"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[C등급] EF-M15-45mm F3.5-6.3 IS STM (Black)",
     "price": "165,000",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/42123"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[C등급] 스피드라이트 430EX III-RT",
     "price": "206,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/"
+  },
+  {
+    "name": "[S등급] CF-R20EP",
+    "price": "548,100",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/"
   },
