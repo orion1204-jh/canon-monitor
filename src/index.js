@@ -37,8 +37,9 @@ function escapeHtml(text) {
     .replace(/"/g, '&quot;');
 }
 
-// 상품 링크(상세 ID)가 이름보다 안정적인 키. 링크가 없으면 이름으로 대체
-const keyOf = p => p.link || p.name;
+// 상품 상세 ID가 있는 링크가 이름보다 안정적인 키.
+// 사이트가 ID 없는 링크(".../detailview/")를 주는 상품도 있어서, 그때는 이름으로 대체
+const keyOf = p => (/\/\d+$/.test(p.link || '') ? p.link : p.name);
 const priceNum = p => Number(String(p.price ?? '').replace(/[^0-9]/g, '')) || null;
 
 function formatItem(item, extra = '') {
