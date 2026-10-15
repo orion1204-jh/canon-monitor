@@ -33,7 +33,11 @@
 ## 실행 주기 개선
 
 GitHub 무료 스케줄은 `*/5`로 설정해도 실제로는 몇 시간씩 지연됩니다.
-더 자주 확인하려면 [cron-job.org](https://cron-job.org) 같은 외부 스케줄러가 5~10분마다 아래 요청을 보내게 하세요.
+더 자주 확인하려면 [cron-job.org](https://cron-job.org) 같은 외부 스케줄러가 주기적으로 아래 요청을 보내게 하세요.
+
+> **간격 주의 (Actions 사용량):** 한 번 실행에 약 1분이 걸립니다.
+> - 공개(public) 저장소: Actions 무제한 무료 → 5~10분 간격 가능
+> - 비공개(private) 저장소: 월 2,000분 무료 → **1시간 간격** 정도가 한도 안. 한도를 넘기면 그 달은 실행이 멈춥니다.
 
 - URL: `https://api.github.com/repos/<owner>/canon-monitor/actions/workflows/monitor.yml/dispatches`
 - Method: `POST`
