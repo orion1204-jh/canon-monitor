@@ -8,7 +8,7 @@ async function sendNotification(message) {
   if (!BOT_TOKEN || !CHAT_ID) {
     console.warn('Telegram settings not found. Notification cannot be sent. (Check .env file)');
     console.log('Notification Content:', message);
-    return;
+    return true;
   }
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -20,8 +20,10 @@ async function sendNotification(message) {
       parse_mode: 'HTML'
     });
     console.log('Telegram notification sent successfully');
+    return true;
   } catch (error) {
     console.error('Failed to send Telegram notification:', error.response?.data || error.message);
+    return false;
   }
 }
 
