@@ -53,9 +53,6 @@ async function scrapeProducts() {
     console.log(`총 ${products.length}개의 상품을 찾았습니다.`);
     return products;
 
-  } catch (error) {
-    console.error('스크래핑 중 오류 발생:', error);
-    return [];
   } finally {
     await browser.close();
   }
