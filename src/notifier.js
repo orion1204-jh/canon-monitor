@@ -17,7 +17,8 @@ async function sendNotification(message) {
     await axios.post(url, {
       chat_id: CHAT_ID,
       text: message,
-      parse_mode: 'HTML'
+      parse_mode: 'HTML',
+      disable_web_page_preview: true
     });
     console.log('Telegram notification sent successfully');
     return true;

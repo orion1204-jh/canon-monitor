@@ -7,6 +7,16 @@ const DATA_PATH = path.join(__dirname, '../data/products.json');
 const STATUS_PATH = path.join(__dirname, '../data/status.json');
 const FAILURE_ALERT_THRESHOLD = 3; // 연속 실패 N회째에 한 번만 알림
 
+// 예: "R6,RF,S등급" — 비어 있으면 모든 상품 알림
+const WATCH_KEYWORDS = (process.env.WATCH_KEYWORDS || '')
+  .split(',')
+  .map(k => k.trim().toLowerCase())
+  .filter(Boolean);
+const matchesKeywords = p =>
+  WATCH_KEYWORDS.length === 0 || WATCH_KEYWORDS.some(k => p.name.toLowerCase().includes(k));
+
+const todayKst = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+
 function readJson(file, fallback) {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf-8'));
@@ -76,7 +86,7 @@ async function main() {
   const restocked = [];
   const priceDrops = [];
   for (const item of currentProducts) {
-    if (item.isSoldOut) continue;
+    if (item.isSoldOut || !matchesKeywords(item)) continue;
     const prev = savedByKey.get(keyOf(item));
     if (!prev) {
       newItems.push(item);
@@ -115,7 +125,18 @@ async function main() {
     return recordFailure('텔레그램 알림 전송 실패');
   }
   writeJson(DATA_PATH, currentProducts);
-  writeJson(STATUS_PATH, { consecutiveFailures: 0 });
+
+  // 5. 하루 한 번(KST 기준) 정상 작동 알림
+  const status = readJson(STATUS_PATH, {});
+  let lastHeartbeat = status.lastHeartbeat;
+  if (lastHeartbeat !== todayKst()) {
+    const available = currentProducts.filter(p => !p.isSoldOut).length;
+    const sent = await sendNotification(
+      `✅ Canon Monitor 정상 작동 중\n상품 ${currentProducts.length}개 · 판매중 ${available}개`
+    );
+    if (sent) lastHeartbeat = todayKst();
+  }
+  writeJson(STATUS_PATH, { consecutiveFailures: 0, lastHeartbeat });
   console.log('State updated.');
 }
 

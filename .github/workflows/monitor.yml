@@ -37,6 +37,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WATCH_KEYWORDS: ${{ vars.WATCH_KEYWORDS }}
         run: node src/index.js
 
       - name: Commit and Push changes
