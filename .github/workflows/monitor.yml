@@ -1,9 +1,21 @@
 name: Canon Product Monitor
 
+# GitHub 스케줄은 몇 시간씩 지연되므로, 한 번 시작된 실행이 내부에서
+# INTERVAL_SECONDS마다 반복 확인하다가 LOOP_MINUTES 후 종료한다.
+# 매시간 스케줄 + concurrency 대기열 덕분에 끝나면 다음 실행이 바로 이어진다.
+# (공개 저장소에서는 Actions 사용량 무제한)
+
 on:
   schedule:
-    - cron: '*/5 * * * *' # Run every 5 minutes (GitHub minimum)
-  workflow_dispatch: # Add manual trigger button
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      loop_minutes:
+        description: '반복 실행 시간(분). 0이면 한 번만 확인'
+        default: '340'
+      interval_seconds:
+        description: '확인 간격(초)'
+        default: '300'
 
 permissions:
   contents: write
@@ -15,7 +27,7 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 355 # GitHub 최대 360분
 
     steps:
       - name: Checkout repository
@@ -33,21 +45,23 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install chromium --with-deps
 
-      - name: Run Monitor
+      - name: Run Monitor loop
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WATCH_KEYWORDS: ${{ vars.WATCH_KEYWORDS }}
-        run: node src/index.js
-
-      - name: Commit and Push changes
-        if: always()
+          LOOP_MINUTES: ${{ inputs.loop_minutes || '340' }}
+          INTERVAL_SECONDS: ${{ inputs.interval_seconds || '300' }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/products.json data/status.json
-          if git commit -m "Update product data [skip ci]"; then
-            git pull --rebase origin main && git push
-          else
-            echo "No changes to commit"
-          fi
+          end=$(( $(date +%s) + LOOP_MINUTES * 60 ))
+          while true; do
+            node src/index.js || echo "::warning::Monitor run failed"
+            git add data/products.json data/status.json
+            if git commit -q -m "Update product data [skip ci]"; then
+              git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q || echo "::warning::Push failed"
+            fi
+            [ $(( $(date +%s) + INTERVAL_SECONDS )) -lt "$end" ] || break
+            sleep "$INTERVAL_SECONDS"
+          done

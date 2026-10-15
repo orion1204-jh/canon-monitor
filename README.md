@@ -28,23 +28,16 @@
 
 ## 수동 실행
 
-**Actions** 탭 → Canon Product Monitor → **Run workflow**
+**Actions** 탭 → Canon Product Monitor → **Run workflow** (`loop_minutes`를 `0`으로 하면 한 번만 확인하고 끝남)
 
-## 실행 주기 개선
+## 실행 주기
 
-GitHub 무료 스케줄은 `*/5`로 설정해도 실제로는 몇 시간씩 지연됩니다.
-더 자주 확인하려면 [cron-job.org](https://cron-job.org) 같은 외부 스케줄러가 주기적으로 아래 요청을 보내게 하세요.
+GitHub 스케줄은 설정보다 몇 시간씩 늦게 실행되는 경우가 많아서, 한 번 시작된 실행이 **약 5시간 40분 동안 5분마다** 반복 확인하도록 되어 있습니다.
+매시간 스케줄이 다음 실행을 대기열에 올려 두므로, 이전 실행이 끝나면 다음 실행이 바로 이어집니다. 외부 스케줄러는 필요 없습니다.
 
-> **간격 주의 (Actions 사용량):** 한 번 실행에 약 1분이 걸립니다.
-> - 공개(public) 저장소: Actions 무제한 무료 → 5~10분 간격 가능
-> - 비공개(private) 저장소: 월 2,000분 무료 → **1시간 간격** 정도가 한도 안. 한도를 넘기면 그 달은 실행이 멈춥니다.
-
-- URL: `https://api.github.com/repos/<owner>/canon-monitor/actions/workflows/monitor.yml/dispatches`
-- Method: `POST`
-- Headers: `Authorization: Bearer <GitHub 토큰>`, `Accept: application/vnd.github+json`
-- Body: `{"ref":"main"}`
-
-토큰은 GitHub **Settings → Developer settings → Fine-grained tokens**에서 이 저장소만 선택하고 **Actions: Read and write** 권한으로 만듭니다.
+- 간격/시간 변경: `monitor.yml`의 `INTERVAL_SECONDS`, `LOOP_MINUTES` 기본값 수정
+- 수동 실행 시 `loop_minutes`를 `0`으로 하면 한 번만 확인
+- 공개 저장소라 Actions 사용량은 무제한입니다. **비공개로 바꾸면 월 2,000분 한도를 며칠 만에 넘기니** 그때는 `LOOP_MINUTES`를 `0`으로 바꾸세요.
 
 ## 로컬 실행
 
