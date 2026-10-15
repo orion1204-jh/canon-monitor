@@ -39,13 +39,16 @@ function escapeHtml(text) {
 
 // 상품 상세 ID가 있는 링크가 이름보다 안정적인 키.
 // 사이트가 ID 없는 링크(".../detailview/")를 주는 상품도 있어서, 그때는 이름으로 대체
-const keyOf = p => (/\/\d+$/.test(p.link || '') ? p.link : p.name);
+const SHOP_URL = 'https://m.estore.kr.canon/planshop/refurmain';
+const hasProductId = p => /\/\d+$/.test(p.link || '');
+const keyOf = p => (hasProductId(p) ? p.link : p.name);
 const priceNum = p => Number(String(p.price ?? '').replace(/[^0-9]/g, '')) || null;
 
 function formatItem(item, extra = '') {
   let msg = `🛒 <b>${escapeHtml(item.name)}</b>\n`;
   msg += `💰 Price: ${escapeHtml(item.price)}KRW${extra}\n`;
-  if (item.link) msg += `🔗 <a href="${escapeHtml(item.link)}">View Product</a>\n`;
+  const link = hasProductId(item) ? item.link : SHOP_URL;
+  msg += `🔗 <a href="${escapeHtml(link)}">View Product</a>\n`;
   return msg + '\n';
 }
 
