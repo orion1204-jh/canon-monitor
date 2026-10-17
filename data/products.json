@@ -12,12 +12,6 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43659"
   },
   {
-    "name": "[S등급] EOS R1",
-    "price": "8,009,100",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/43639"
-  },
-  {
     "name": "[S등급] EOS R5 Mark II 24-105 USM",
     "price": "6,199,200",
     "isSoldOut": false,
@@ -88,5 +82,11 @@
     "price": "206,250",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/23016"
+  },
+  {
+    "name": "[S등급] EF-S 24mm f/2.8 STM",
+    "price": "161,100",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/40581"
   }
 ]
