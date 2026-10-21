@@ -66,12 +66,6 @@
     "link": "https://m.estore.kr.canon/estore/detailview/16096"
   },
   {
-    "name": "[A등급] EOS 5D Mark IV 24-105 F4 II KIT",
-    "price": "3,074,250",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/13557"
-  },
-  {
     "name": "[S등급] EF-S 18-135mm f/3.5-5.6 IS USM",
     "price": "657,000",
     "isSoldOut": false,
@@ -88,5 +82,11 @@
     "price": "206,250",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/23016"
+  },
+  {
+    "name": "[S등급] EF-S 24mm f/2.8 STM",
+    "price": "161,100",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/40581"
   }
 ]
