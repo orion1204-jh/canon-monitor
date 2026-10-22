@@ -30,6 +30,12 @@
     "link": "https://m.estore.kr.canon/estore/detailview/35166"
   },
   {
+    "name": "[S등급] EOS R8 (Body)",
+    "price": "1,949,000",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41597"
+  },
+  {
     "name": "[A등급] RF135mm F1.8L IS USM",
     "price": "2,174,250",
     "isSoldOut": false,
@@ -82,11 +88,5 @@
     "price": "206,250",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/23016"
-  },
-  {
-    "name": "[S등급] EF-S 24mm f/2.8 STM",
-    "price": "161,100",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/40581"
   }
 ]
