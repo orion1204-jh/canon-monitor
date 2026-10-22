@@ -31,7 +31,7 @@
   },
   {
     "name": "[S등급] EOS R8 (Body)",
-    "price": "1,949,000",
+    "price": "1,754,100",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/41597"
   },
@@ -60,6 +60,12 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43638"
   },
   {
+    "name": "[S등급] RF 50mm F1.8 STM",
+    "price": "271,800",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/40587"
+  },
+  {
     "name": "[S등급] RF 24-105mm F4-7.1 IS STM",
     "price": "517,500",
     "isSoldOut": false,
@@ -82,11 +88,5 @@
     "price": "165,000",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/42123"
-  },
-  {
-    "name": "[C등급] 스피드라이트 430EX III-RT",
-    "price": "206,250",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/23016"
   }
 ]
