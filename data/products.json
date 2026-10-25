@@ -72,12 +72,6 @@
     "link": "https://m.estore.kr.canon/estore/detailview/40587"
   },
   {
-    "name": "[S등급] RF 24-105mm F4-7.1 IS STM",
-    "price": "517,500",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/43563"
-  },
-  {
     "name": "[A등급] EOS RP (Body)",
     "price": "966,750",
     "isSoldOut": false,
@@ -88,5 +82,11 @@
     "price": "657,000",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/41581"
+  },
+  {
+    "name": "[C등급] EF-M15-45mm F3.5-6.3 IS STM (Black)",
+    "price": "165,000",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/42123"
   }
 ]
