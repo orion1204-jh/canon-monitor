@@ -1,5 +1,5 @@
 {
-  "consecutiveFailures": 1,
+  "consecutiveFailures": 2,
   "lastHeartbeat": "2026-10-30",
   "lastError": "스크래핑 오류: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://m.estore.kr.canon/planshop/refurmain\", waiting until \"networkidle\"\n"
 }
