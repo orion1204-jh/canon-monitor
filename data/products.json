@@ -6,12 +6,6 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43637"
   },
   {
-    "name": "[B등급] EOS R50 V 14-30 KIT (화이트)",
-    "price": "909,350",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/43884"
-  },
-  {
     "name": "[A등급] EOS R50 V 14-30 KIT (화이트)",
     "price": "1,049,250",
     "isSoldOut": false,
@@ -88,5 +82,11 @@
     "price": "165,000",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/42123"
+  },
+  {
+    "name": "[C등급] 스피드라이트 430EX III-RT",
+    "price": "206,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/23016"
   }
 ]
