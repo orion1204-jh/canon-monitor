@@ -26,7 +26,7 @@ concurrency:
 
 jobs:
   monitor:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # ubuntu-latest(26.04)는 Playwright 1.57 미지원
     timeout-minutes: 355 # GitHub 최대 360분
 
     steps:
