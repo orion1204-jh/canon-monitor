@@ -9,7 +9,18 @@ async function scrapeProducts() {
 
   try {
     console.log('캐논 리퍼비시 샵 접속 중...');
-    await page.goto('https://m.estore.kr.canon/planshop/refurmain', { waitUntil: 'networkidle' });
+    // networkidle은 광고·분석 요청 때문에 안 끝나는 경우가 있어, 상품 목록이 보이는지로 판단
+    for (let attempt = 1; ; attempt++) {
+      try {
+        await page.goto('https://m.estore.kr.canon/planshop/refurmain', { waitUntil: 'domcontentloaded', timeout: 60000 });
+        await page.waitForSelector('.product-item', { timeout: 30000 });
+        break;
+      } catch (error) {
+        if (attempt >= 2) throw error;
+        console.log(`접속 실패, 5초 후 재시도: ${error.message.split('\n')[0]}`);
+        await page.waitForTimeout(5000);
+      }
+    }
 
     // "더보기" 버튼 클릭하여 모든 상품 로드
     let hasMore = true;
