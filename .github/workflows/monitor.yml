@@ -3,6 +3,7 @@ name: Canon Product Monitor
 # GitHub 스케줄은 몇 시간씩 지연되므로, 한 번 시작된 실행이 내부에서
 # INTERVAL_SECONDS마다 반복 확인하다가 LOOP_MINUTES 후 종료한다.
 # 매시간 스케줄 + concurrency 대기열 덕분에 끝나면 다음 실행이 바로 이어진다.
+# 스케줄이 늦어 대기 중인 실행이 없으면, 끝날 때 다음 실행을 직접 띄운다.
 # (공개 저장소에서는 Actions 사용량 무제한)
 
 on:
@@ -19,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # 다음 실행을 직접 띄우기 위해 필요
 
 concurrency:
   group: canon-monitor
@@ -65,3 +67,16 @@ jobs:
             [ $(( $(date +%s) + INTERVAL_SECONDS )) -lt "$end" ] || break
             sleep "$INTERVAL_SECONDS"
           done
+
+      - name: Queue next run if none is waiting
+        if: ${{ (inputs.loop_minutes || '340') != '0' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          waiting=$(gh run list --workflow monitor.yml --limit 20 --json status \
+            --jq '[.[] | select(.status != "completed" and .status != "in_progress")] | length')
+          if [ "$waiting" = "0" ]; then
+            gh workflow run monitor.yml --ref "$GITHUB_REF_NAME"
+          else
+            echo "이미 대기 중인 실행이 있어 건너뜀"
+          fi
