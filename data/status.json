@@ -1,5 +1,5 @@
 {
-  "consecutiveFailures": 35,
+  "consecutiveFailures": 36,
   "lastHeartbeat": "2026-11-14",
   "lastError": "스크래핑 오류: page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('.product-item') to be visible\n"
 }
