@@ -4,6 +4,9 @@ name: Canon Product Monitor
 # INTERVAL_SECONDS마다 반복 확인하다가 LOOP_MINUTES 후 종료한다.
 # 매시간 스케줄 + concurrency 대기열 덕분에 끝나면 다음 실행이 바로 이어진다.
 # (공개 저장소에서는 Actions 사용량 무제한)
+#
+# 일부 러너(IP)는 캐논 사이트 접속이 아예 막혀서 그 실행 내내 실패한다.
+# 그래서 한 실행 안에서 연속 실패하면 새 실행(새 러너)을 띄우고 바로 종료한다.
 
 on:
   schedule:
@@ -16,9 +19,13 @@ on:
       interval_seconds:
         description: '확인 간격(초)'
         default: '300'
+      reroll:
+        description: '접속 차단으로 러너를 바꾼 횟수 (자동으로 채워짐)'
+        default: '0'
 
 permissions:
   contents: write
+  actions: write # 접속이 막힌 러너에서 새 실행을 띄우기 위함
 
 concurrency:
   group: canon-monitor
@@ -52,15 +59,30 @@ jobs:
           WATCH_KEYWORDS: ${{ vars.WATCH_KEYWORDS }}
           LOOP_MINUTES: ${{ inputs.loop_minutes || '340' }}
           INTERVAL_SECONDS: ${{ inputs.interval_seconds || '300' }}
+          REROLL: ${{ inputs.reroll || '0' }}
+          MAX_REROLLS: '4' # 이만큼 바꿔도 안 되면 사이트 문제로 보고 그냥 계속 반복
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           end=$(( $(date +%s) + LOOP_MINUTES * 60 ))
+          fails=0
           while true; do
-            node src/index.js || echo "::warning::Monitor run failed"
+            if node src/index.js; then
+              fails=0
+            else
+              fails=$(( fails + 1 ))
+              echo "::warning::Monitor run failed ($fails in a row on this runner)"
+            fi
             git add data/products.json data/status.json
             if git commit -q -m "Update product data [skip ci]"; then
               git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q || echo "::warning::Push failed"
+            fi
+            if [ "$fails" -ge 2 ] && [ "$REROLL" -lt "$MAX_REROLLS" ]; then
+              echo "::warning::이 러너에서 연속 실패 → 새 러너로 다시 실행 (reroll $(( REROLL + 1 )))"
+              gh workflow run monitor.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
+                -f loop_minutes="$LOOP_MINUTES" -f interval_seconds="$INTERVAL_SECONDS" \
+                -f reroll=$(( REROLL + 1 )) && break
             fi
             [ $(( $(date +%s) + INTERVAL_SECONDS )) -lt "$end" ] || break
             sleep "$INTERVAL_SECONDS"

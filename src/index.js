@@ -5,7 +5,7 @@ const { sendNotification } = require('./notifier');
 
 const DATA_PATH = path.join(__dirname, '../data/products.json');
 const STATUS_PATH = path.join(__dirname, '../data/status.json');
-const FAILURE_ALERT_THRESHOLD = 3; // 연속 실패 N회째에 한 번만 알림
+const FAILURE_ALERT_THRESHOLD = 6; // 연속 실패 N회째에 한 번만 알림 (러너 차단은 워크플로가 러너를 바꿔 해결하므로, 여러 러너에서 다 실패할 때만)
 
 // 예: "R6,RF,S등급" — 비어 있으면 모든 상품 알림
 const WATCH_KEYWORDS = (process.env.WATCH_KEYWORDS || '')
