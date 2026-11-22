@@ -39,6 +39,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          # 대기열에서 오래 기다린 실행은 예약 시점의 커밋을 받아와서, 그 사이 쌓인
+          # 데이터 커밋과 충돌해 push가 계속 실패한다. 항상 브랜치 최신을 받는다.
+          ref: ${{ github.ref_name }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v5
@@ -76,7 +80,12 @@ jobs:
             fi
             git add data/products.json data/status.json
             if git commit -q -m "Update product data [skip ci]"; then
-              git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q || echo "::warning::Push failed"
+              # 데이터 파일 충돌 시 방금 만든(최신) 쪽을 우선
+              if git pull -q --rebase -X theirs origin "$GITHUB_REF_NAME"; then
+                git push -q || echo "::warning::Push failed"
+              else
+                git rebase --abort; echo "::warning::Pull failed"
+              fi
             fi
             if [ "$fails" -ge 2 ] && [ "$REROLL" -lt "$MAX_REROLLS" ]; then
               echo "::warning::이 러너에서 연속 실패 → 새 러너로 다시 실행 (reroll $(( REROLL + 1 )))"
