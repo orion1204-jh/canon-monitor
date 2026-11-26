@@ -6,6 +6,12 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43637"
   },
   {
+    "name": "[A등급] RF200-800mm F6.3-9 IS USM",
+    "price": "1,924,300",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41051"
+  },
+  {
     "name": "[A등급] EOS R50 V 14-30 KIT (화이트)",
     "price": "1,049,250",
     "isSoldOut": false,
@@ -24,6 +30,12 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43640"
   },
   {
+    "name": "[A등급] RF24-105mm F2.8 L IS USM Z",
+    "price": "3,224,250",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/41575"
+  },
+  {
     "name": "[S등급] EOS R8 (Body)",
     "price": "1,754,100",
     "isSoldOut": false,
@@ -36,10 +48,28 @@
     "link": "https://m.estore.kr.canon/estore/detailview/42679"
   },
   {
+    "name": "[B등급] EOS R7 (Body)",
+    "price": "1,227,850",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/25512"
+  },
+  {
+    "name": "[B등급] EOS R7 18-150 KIT",
+    "price": "1,539,850",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/25518"
+  },
+  {
     "name": "[S등급] EF16-35mm F4L IS USM",
     "price": "1,511,100",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/43377"
+  },
+  {
+    "name": "[B등급] EOS R6 Mark II",
+    "price": "1,819,350",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/40177"
   },
   {
     "name": "[S등급] EOS R6 Mark II",
@@ -48,27 +78,33 @@
     "link": "https://m.estore.kr.canon/estore/detailview/43638"
   },
   {
+    "name": "[B등급] EOS R3 (Body)",
+    "price": "4,029,350",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/25506"
+  },
+  {
     "name": "[A등급] EOS RP (Body)",
     "price": "966,750",
     "isSoldOut": false,
     "link": "https://m.estore.kr.canon/estore/detailview/16096"
   },
   {
+    "name": "[B등급] EOS RP (Body)",
+    "price": "837,850",
+    "isSoldOut": false,
+    "link": "https://m.estore.kr.canon/estore/detailview/"
+  },
+  {
     "name": "[S등급] EF-S 18-135mm f/3.5-5.6 IS USM",
     "price": "657,000",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/41581"
-  },
-  {
-    "name": "[C등급] 스피드라이트 430EX III-RT",
-    "price": "206,250",
-    "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/23016"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   },
   {
     "name": "[B등급] EF-M 11-22mm f/4-5.6 IS STM",
     "price": "331,500",
     "isSoldOut": false,
-    "link": "https://m.estore.kr.canon/estore/detailview/19954"
+    "link": "https://m.estore.kr.canon/estore/detailview/"
   }
 ]
