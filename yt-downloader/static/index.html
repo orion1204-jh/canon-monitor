@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube 다운로더</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>YouTube 다운로더</h1>
+      <p class="muted">가장 좋은 영상과 음성 스트림을 재인코딩 없이 받습니다.</p>
+    </header>
+
+    <p id="warn" class="notice" hidden></p>
+
+    <form id="form" autocomplete="off">
+      <label for="url" class="sr-only">YouTube 링크</label>
+      <input id="url" type="url" placeholder="https://www.youtube.com/watch?v=…" required>
+      <button id="load" type="submit">불러오기</button>
+    </form>
+    <p id="error" class="error" hidden></p>
+
+    <section id="result" hidden>
+      <div class="video">
+        <img id="thumb" alt="">
+        <div>
+          <h2 id="title"></h2>
+          <p id="meta" class="muted"></p>
+        </div>
+      </div>
+
+      <fieldset id="modes">
+        <legend class="sr-only">받을 형식</legend>
+        <label class="mode">
+          <input type="radio" name="mode" value="best" checked>
+          <span class="mode-name">최고 화질<small>MKV · 원본 그대로</small></span>
+          <span class="mode-detail" data-detail="best"></span>
+        </label>
+        <label class="mode">
+          <input type="radio" name="mode" value="mp4">
+          <span class="mode-name">호환 MP4<small>H.264 + AAC · 편집용</small></span>
+          <span class="mode-detail" data-detail="mp4"></span>
+        </label>
+        <label class="mode">
+          <input type="radio" name="mode" value="audio">
+          <span class="mode-name">음성만<small>최고 음질 · 원본 그대로</small></span>
+          <span class="mode-detail" data-detail="audio"></span>
+        </label>
+      </fieldset>
+
+      <button id="download" type="button" class="wide">다운로드</button>
+
+      <div id="progress" hidden>
+        <div class="bar"><div id="bar-fill"></div></div>
+        <div class="progress-text">
+          <span id="stage"></span>
+          <span id="numbers" class="muted"></span>
+        </div>
+        <a id="save" class="save" hidden>파일 저장</a>
+      </div>
+    </section>
+
+    <footer class="muted">
+      본인이 권리를 가진 영상이나 허락받은 영상에만 사용하세요.
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

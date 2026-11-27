@@ -1,0 +1,147 @@
+:root {
+  --bg: #ffffff;
+  --text: #161616;
+  --muted: #6e6e6e;
+  --line: #e3e3e3;
+  --soft: #f5f5f4;
+  --btn: #161616;
+  --btn-text: #ffffff;
+  --error: #b42318;
+  --notice-bg: #fdf6e3;
+  --notice-text: #6b4e00;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #ececec;
+    --muted: #9a9a9a;
+    --line: #2c2c2c;
+    --soft: #1c1c1c;
+    --btn: #ececec;
+    --btn-text: #121212;
+    --error: #f97066;
+    --notice-bg: #2a2310;
+    --notice-text: #e8c66a;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic",
+        "Segoe UI", "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 16px 40px;
+}
+
+header { margin-bottom: 28px; }
+h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 16px; font-weight: 600; margin: 0 0 4px; line-height: 1.4; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+form { display: flex; gap: 8px; }
+
+input[type="url"] {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+input[type="url"]:focus { outline: none; border-color: var(--text); }
+
+button, .save {
+  height: 42px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--btn);
+  color: var(--btn-text);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+button:disabled { opacity: 0.45; cursor: default; }
+button.wide { width: 100%; margin-top: 16px; }
+
+.error { color: var(--error); margin-top: 10px; font-size: 14px; }
+.notice {
+  background: var(--notice-bg); color: var(--notice-text);
+  padding: 10px 12px; border-radius: 6px; font-size: 14px; margin-bottom: 16px;
+}
+
+#result { margin-top: 32px; }
+
+.video { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+.video img {
+  width: 160px; aspect-ratio: 16 / 9; object-fit: cover;
+  border-radius: 4px; background: var(--soft); flex-shrink: 0;
+}
+
+fieldset { border: 1px solid var(--line); border-radius: 6px; padding: 0; margin: 0; }
+
+.mode {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 14px;
+  cursor: pointer;
+}
+.mode + .mode { border-top: 1px solid var(--line); }
+.mode:has(input:checked) { background: var(--soft); }
+.mode input { margin: 0; accent-color: var(--text); }
+.mode-name { font-weight: 500; }
+.mode-detail { text-align: right; font-size: 13px; color: var(--muted); line-height: 1.45; }
+.mode-detail b { color: var(--text); font-weight: 500; }
+
+#progress { margin-top: 18px; }
+.bar { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+#bar-fill { height: 100%; width: 0; background: var(--text); transition: width 0.3s; }
+.bar.busy #bar-fill { width: 30% !important; animation: slide 1.2s ease-in-out infinite; }
+@keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(340%); } }
+
+.progress-text {
+  display: flex; justify-content: space-between; gap: 12px;
+  margin-top: 8px; font-size: 13px; font-variant-numeric: tabular-nums;
+}
+#stage { white-space: nowrap; }
+#numbers { text-align: right; }
+.save {
+  display: inline-flex; align-items: center; margin-top: 14px;
+  text-decoration: none;
+}
+
+footer { margin-top: 56px; font-size: 12px; }
+
+@media (max-width: 520px) {
+  main { padding-top: 32px; }
+  .video { flex-direction: column; }
+  .video img { width: 100%; }
+  .mode { grid-template-columns: auto 1fr; }
+  .mode-detail { grid-column: 2; text-align: left; }
+}
